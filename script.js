@@ -5,7 +5,7 @@ const data = [
     brand: 'Audi',
     doors: 4,
     price: 4300000,
-    image: '<https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/2020_Audi_e-Tron_Sport_50_Quattro.jpg/1200px-2020_Audi_e-Tron_Sport_50_Quattro.jpg>'
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/2020_Audi_e-Tron_Sport_50_Quattro.jpg/1200px-2020_Audi_e-Tron_Sport_50_Quattro.jpg"
     },
     {
     id: 2,
@@ -13,7 +13,7 @@ const data = [
     brand: 'Mercedes-Benz',
     doors: 4,
     price: 2800000,
-    image: '<https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/2019_Mercedes-Benz_E220d_SE_Automatic_2.0_Front.jpg/300px-2019_Mercedes-Benz_E220d_SE_Automatic_2.0_Front.jpg>'
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/2019_Mercedes-Benz_E220d_SE_Automatic_2.0_Front.jpg/300px-2019_Mercedes-Benz_E220d_SE_Automatic_2.0_Front.jpg"
     },
     {
     id: 3,
@@ -21,7 +21,7 @@ const data = [
     brand: 'Harley-Davidson',
     maxSpeed: 210,
     price: 1300000,
-    image: '<https://www.harley-davidson.com/content/dam/h-d/images/product-images/bikes/motorcycle/2022/2022-iron-883/2022-iron-883-016/2022-iron-883-016-motorcycle.jpg>'
+    image: "https://www.harley-davidson.com/content/dam/h-d/images/product-images/bikes/motorcycle/2022/2022-iron-883/2022-iron-883-016/2022-iron-883-016-motorcycle.jpg"
 },
 {
     id: 4,
@@ -29,7 +29,7 @@ const data = [
     brand: 'Harley-Davidson',
     maxSpeed: 220,
     price: 1400000,
-    image: '<https://cdn.dealerspike.com/imglib/products/harley-showroom/2020/livewire/main/Vivid-Black-Main.png>'
+    image: "https://cdn.dealerspike.com/imglib/products/harley-showroom/2020/livewire/main/Vivid-Black-Main.png"
 }
 ];
 
@@ -58,22 +58,22 @@ console.log(newCar4.getInfo());
 
 
 class Car extends Transport{
-constructor(doors, brand, price){
-super('car',brand,price);
+constructor(brand, price, doors){
+super('car', price, brand);
 this.doors = doors;
 }
     getDoorsCount(){
 return this.doors;
     }
 }
-const car1 = new Car('car', 'Audi',4);
-const car2 = new Car('car', 'Mercedes-Benz', 4);
+const car1 = new Car('Audi',4300000,4,);
+const car2 = new Car('Mercedes-Benz',2800000, 4,);
 console.log(car1.getDoorsCount());
 console.log(car2.getDoorsCount());
 
 class Bike extends Transport{
-constructor(maxSpeed, brand, price){
-super('bike', brand,price)
+constructor(brand, price, maxSpeed){
+super('bike', price,brand)
         this.maxSpeed = maxSpeed;
     }
     getMaxSpeed(){
@@ -81,7 +81,7 @@ return this.maxSpeed;
     }
 }
 
-const bike1 = new Bike('bike', 'Harley-Davidson',220);
-const bike2 = new Bike('bike', 'Harley-Davidson', 210);
+const bike1 = new Bike('Harley-Davidson',1300000,220);
+const bike2 = new Bike('Harley-Davidson', 1400000,210);
 console.log(bike1.getMaxSpeed());
 console.log(bike2.getMaxSpeed());
